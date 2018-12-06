@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <title>
+        {% block title %}
+            Base.html
+        {% endblock title %}
+    </title>
+    {% load staticfiles %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/snowfall.jquery.js' %}"></script>
+    <script type="text/javascript" src="{% block extrajavascript %}{% endblock extrajavascript %}"></script>
+    <script type="text/javascript" src="{% block extrajavascript2 %}{% endblock extrajavascript2 %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock extrastyle %}"/>
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock extrastyle2 %}"/>
+    {% block extrafont %}
+    {% endblock extrafont %}
+</head>
+<body>
+    <div id="header">
+        <header>
+            <a id="Team_name" href="{% url 'index' %}">
+                Eirene
+            </a>
+            <!-- <img src="{% static 'image/deco1.png' %}" id="deco1"/> -->
+            <nav id="search_nav">
+                <button type="button" id="search_button">
+                    <a href="{% url 'search_all' %}">
+                        <img src="{% static 'image/search_icon.png' %}" alt="search_icon" id="search_icon"/>
+                    </a>
+                </button>
+            </nav>
+            <div id="drop_down">
+                <nav id="drop_down_menu">
+                    <ul id="drop_down_ul">
+                        <li class="drop_down_li">
+                            <a href="." class="drop_down_name">
+                                J-US Worship
+                            </a>
+                            <ul class="second_drop_down_ul">
+                                <li class="second_drop_down_li">
+                                    <a href="{% url 'jus:post_list' %}" class="drop_down_link_name">
+                                        J-US 게시판
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="drop_down_li">
+                            <a href="." class="drop_down_name">
+                                Makers Worship
+                            </a>
+                            <ul class="second_drop_down_ul">
+                                <li class="second_drop_down_li">
+                                    <a href="{% url 'makers:post_list' %}" class="drop_down_link_name">
+                                        Makers 게시판
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="drop_down_li">
+                            <a href="." class="drop_down_name">
+                                Anointing Worship
+                            </a>
+                            <ul class="second_drop_down_ul">
+                                <li class="second_drop_down_li">
+                                    <a href="{% url 'anointing:post_list' %}" class="drop_down_link_name">
+                                        Anointing 게시판
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="drop_down_li">
+                            <a href="." class="drop_down_name">
+                                Another
+                            </a>
+                            <ul class="second_drop_down_ul">
+                                <li class="second_drop_down_li">
+                                    <a href="." class="drop_down_link_name">
+                                        All
+                                    </a>
+                                </li>
+                                <li class="second_drop_down_li">
+                                    <a href="{% url 'admin:index' %}" class="drop_down_link_name">
+                                        Admin
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="m_menu">
+                <!--  mobile version  -->
+                <button type="button" id="m_open_close_menu">
+                    <div class="m_open_close_button_line">
+                    </div>
+                    <div class="m_open_close_button_line">
+                    </div>
+                    <div class="m_open_close_button_line">
+                    </div>
+                </button>
+            </div>
+        </header>
+    </div>
+    <nav id="open_close_menu">
+        <button type="button" id="open_close_button">
+            <div class="open_close_button_line"></div>
+            <div class="open_close_button_line"></div>
+            <div class="open_close_button_line"></div>
+        </button>
+    </nav>
+    <div id="wrap">
+        <div id="body">
+            <div id="image_link">
+                {% block imagelink %}
+                {% endblock imagelink %}
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

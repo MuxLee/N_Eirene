@@ -1,0 +1,63 @@
+{% extends 'home.html' %}
+{% block title %}
+    list
+{% endblock title %}
+{% load staticfiles %}
+{% block content %}
+    <div id="free_board_div">
+        <a href="{% url 'index' %}" id="board_name">
+            자유 게시판
+        </a>
+        <table id="free_board">
+            <tr>
+                <th class="td_style" id="m_show_editer">
+                    작성자
+                </th>
+                <th class="td_style" id="m_show_title">
+                    제목
+                </th>
+            </tr>
+            {% for list in lists %}
+                <tr>
+                  <td class="bottom_line" id="edit_user_name_td">
+                      {{ user.username }}
+                  </td>
+                  <td class="bottom_line" id="edit_user_title_td">
+                      <a href="{{ list.get_absolute_url }}" class="absolute_url_font">
+                          {{ list.title|truncatechars:20 }}
+                      </a>
+                  </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div id="paging">
+          {% if is_paginated %}
+              <ul id="page_ul">
+                {% if page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}" class="page_button">
+                    <li>
+                        <
+                    </li>
+                  </a>
+                {% else %}
+                {% endif %}
+                {% for page in page_range %}
+                <a  class="page_button" href="?page={{ page }}" {% if page == page_obj.number %} id="this_page" {% endif %}>
+                  <li>
+                      {{ page }}
+                  </li>
+                </a>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}" class="page_button">
+                    <li>
+                        >
+                    </li>
+                  </a>
+                {% else %}
+                {% endif %}
+              </ul>
+          {% endif %}
+        </div>
+    </div>
+{% endblock content %}

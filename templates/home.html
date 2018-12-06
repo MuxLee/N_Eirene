@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block title %}
+    Eirene에 어서오세요!
+{% endblock title %}
+{% load staticfiles %}
+{% block extrajavascript %}
+    {% static 'js/home.js' %}
+{% endblock extrajavascript %}
+{% block extrastyle %}
+    {% static 'css/home.css' %}
+{% endblock extrastyle %}
+{% block extrafont %}
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet">
+{% endblock extrafont %}
+{% block imagelink %}
+    <ul id="m_slid_ul">
+        <li class="m_slide_li">
+            <a href="#">
+                <img src="{% static 'image/jus.jpg' %}" alt="jus_picture" class="link" id="jus_link"/>
+                <div id="jus_text" class="image_hover_text">
+                    J-US Worship<hr/>
+                    제이어스 워십
+                </div>
+            </a>
+          </li>
+          <li class="m_slide_li">
+            <a href="#">
+                <img src="{% static 'image/makers.jpg' %}" alt="makers_picture" class="link" id="makers_link"/>
+                <div id="makers_text" class="image_hover_text">
+                    Makers Worship<hr/>
+                    마커스 워십
+                </div>
+            </a>
+          </li>
+          <li class="m_slide_li">
+            <a href="#">
+                <img src="{% static 'image/anointing.jpg' %}" alt="anointing_picture" class="link" id="anointing_link"/>
+                <div id="anointing_text" class="image_hover_text">
+                    Anointing Worship<hr/>
+                    어노인팅 워십
+                </div>
+            </a>
+        </li>
+    </ul>
+{% endblock imagelink %}
+{% block content %}
+    <div id="free_board_div">
+        <a href="{% url 'index' %}" id="board_name">
+            자유 게시판
+        </a>
+        <a href="{% url 'board:list' %}" id="m_list">
+          +
+        </a>
+        <table id="free_board">
+            <tr>
+                <th class="td_style" id="m_none_num">
+                    글 번호
+                </th>
+                <th class="td_style" id="m_show_editer">
+                    작성자
+                </th>
+                <th class="td_style" id="m_show_title">
+                    제목
+                </th>
+                <th class="td_style" id="m_none_content">
+                    내용
+                </th>
+                <th class="td_style" id="m_none_data">
+                    날짜
+                </th>
+                <th class="td_style" id="m_none_description">
+                    분류
+                </th>
+            </tr>
+            {% for board in boards %}
+                <tr>
+                  <td class="bottom_line" id="edit_no_td">
+                      {{ board.id }}
+                  </td>
+                  <td class="bottom_line" id="edit_user_name_td">
+                      {{ user.username }}
+                  </td>
+                  <td class="bottom_line" id="edit_user_title_td">
+                      <a href="{{ board.get_absolute_url }}" class="absolute_url_font">
+                          {{ board.title|truncatechars:20 }}
+                      </a>
+                  </td>
+                  <td class="bottom_line" id="edit_user_content_td">
+                      <a href="{{ board.get_absolute_url }}" class="absolute_url_font">
+                          {{ board.content|truncatechars:20 }}
+                      </a>
+                  </td>
+                  <td class="bottom_line" id="edit_user_data_td">
+                      {{ board.modify_date|date:"M d" }}일<br/>
+                      {{ board.modify_date|date:"h:i" }}분
+                  </td>
+                  <td class="bottom_line" id="edit_user_description_td">
+                          {{ board.description }}
+                  </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div id="paging">
+          {% if is_paginated %}
+              <ul id="page_ul">
+                {% if page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}" class="page_button">
+                    <li>
+                        <
+                    </li>
+                  </a>
+                {% else %}
+                {% endif %}
+                {% for page in page_range %}
+                <a  class="page_button" href="?page={{ page }}" {% if page == page_obj.number %} id="this_page" {% endif %}>
+                  <li>
+                      {{ page }}
+                  </li>
+                </a>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}" class="page_button">
+                    <li>
+                        >
+                    </li>
+                  </a>
+                {% else %}
+                {% endif %}
+              </ul>
+          {% endif %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+<h2>
+    {{ object.title }}
+</h2>
+<p>
+    {% if object.get_previous_by_modify_date %}
+        <a href="{{ object.get_previous_board_get }}" title="View Previous Page">
+            &laquo;--{{ object.get_previous_board }}
+        </a>
+    {% endif %}
+    {% if object.get_next_by_modify_date %}
+        <a href="{{ object.get_next_board_get }}" title="View Next Page">
+            {{ object.get_next_board }}--&raquo;
+        </a>
+    {% endif %}
+</p>
+<p>
+    {{ object.modify_date|date:"j F Y" }}
+</p>
+<div>
+    {{ object.content|linebreaks }}
+</div>
