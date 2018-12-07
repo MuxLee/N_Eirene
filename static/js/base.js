@@ -24,6 +24,12 @@ $(document).ready(function () {
     var getMOPwidth = $('#m_open_close_menu').width();
     var getMenuLine = $('.m_open_close_button_line').width();
     $('.m_open_close_button_line').css('left', (getMOPwidth / 2) - (getMenuLine / 1.9));
-    // var getHtmlHeight = $('html').width();
-    // $('#content').css('height', getHtmlHeight);
+
+    //
+    var getUnLogin = $('#unlogin_div').width();
+    var getUnLoginH = $('#unlogin_div').height();
+    var getBodyWidth = $('body').width();
+    var getBodyHeight = $('body').height();
+    $('#unlogin_div').css('left', (getBodyWidth / 2) - (getUnLogin / 2));
+    $('#unlogin_div').css('top', (getBodyHeight / 2) - (getUnLoginH / 2));
 });

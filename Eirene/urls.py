@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^jus/', include('jus.urls', namespace='jus')),
     url(r'^makers/', include('makers.urls', namespace='makers')),
     url(r'^anointing/', include('anointing.urls', namespace='anointing')),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

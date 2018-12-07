@@ -1,0 +1,16 @@
+{% block unlogin %}
+    <div id="unlogin_wrap">
+        <div id="unlogin_div">
+              <nav>
+                  <a href="{% url 'login' %}">
+                      Login
+                  </a>
+              </nav>
+              <nav>
+                  <a href="{% url 'admin:index'}">
+                      Admin
+                  </a>
+              </nav>
+        </div>
+    </div>
+{% endblock unlogin %}

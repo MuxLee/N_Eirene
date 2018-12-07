@@ -1,0 +1,36 @@
+{% if user.is_active %}
+    <h2>
+        Login Success! : [{{ user.username }}]
+    </h2>
+    <a href="{% url 'logout' %}">
+        Logout
+    </a>
+{% else %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+      <div id="id_form">
+          <label for="{{ form.username.id_for_label }}">
+              ID
+          </label>
+          <input class="input_id" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username.html_name }}" type="text"/>
+      </div>
+      <div id="password_form">
+          <label for="{{ form.password.id_for_label }}">
+              PassWord
+          </label>
+          <input class="input_pw" id="{{ form.password.id_for_label }}" maxlength="50" name="{{ form.password.html_name }}" type="password"/>
+      </div>
+      <input type="submit" id="submit_login_info" value="Login"/>
+      <a href="{% url 'index' %}">
+          <button type="button" id="cancel">
+              Cancel
+          </button>
+      </a>
+      <input type="hidden" name="text" value=""/>
+    </form>
+    {% if form.errors %}
+        <p>
+            ID 또는 PassWord가 일치하지 않습니다.
+        </p>
+    {% endif %}
+{% endif %}
