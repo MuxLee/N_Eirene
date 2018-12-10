@@ -1,22 +1,22 @@
 $(document).ready(function () {
-		var getPhoneWidth = $('html').width();
-		if (getPhoneWidth <= 430) {
-				$(document).snowfall({
-						deviceorientation: true,
-						round: true,
-						minSize: 1,
-						maxSize: 3,
-						flakeCount: 30
-				});
-		} else {
-				$(document).snowfall({
-						deviceorientation: true,
-						round: true,
-						minSize: 1,
-						maxSize: 7,
-						flakeCount: 100
-				});
-			}
+		// var getPhoneWidth = $('html').width();
+		// if (getPhoneWidth <= 430) {
+		// 		$(document).snowfall({
+		// 				deviceorientation: true,
+		// 				round: true,
+		// 				minSize: 1,
+		// 				maxSize: 3,
+		// 				flakeCount: 30
+		// 		});
+		// } else {
+		// 		$(document).snowfall({
+		// 				deviceorientation: true,
+		// 				round: true,
+		// 				minSize: 1,
+		// 				maxSize: 7,
+		// 				flakeCount: 100
+		// 		});
+		// 	}
 });
 /*  Snowfall jquery plugin
 

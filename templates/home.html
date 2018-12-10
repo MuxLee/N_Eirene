@@ -78,7 +78,7 @@
                       {{ board.id }}
                   </td>
                   <td class="bottom_line" id="edit_user_name_td">
-                      {{ user.username }}
+                      {{ board.author }}
                   </td>
                   <td class="bottom_line" id="edit_user_title_td">
                       <a href="{{ board.get_absolute_url }}" class="absolute_url_font">
@@ -100,34 +100,4 @@
                 </tr>
             {% endfor %}
         </table>
-        <div id="paging">
-          {% if is_paginated %}
-              <ul id="page_ul">
-                {% if page_obj.has_previous %}
-                  <a href="?page={{ page_obj.previous_page_number }}" class="page_button">
-                    <li>
-                        <
-                    </li>
-                  </a>
-                {% else %}
-                {% endif %}
-                {% for page in page_range %}
-                <a  class="page_button" href="?page={{ page }}" {% if page == page_obj.number %} id="this_page" {% endif %}>
-                  <li>
-                      {{ page }}
-                  </li>
-                </a>
-                {% endfor %}
-                {% if page_obj.has_next %}
-                  <a href="?page={{ page_obj.next_page_number }}" class="page_button">
-                    <li>
-                        >
-                    </li>
-                  </a>
-                {% else %}
-                {% endif %}
-              </ul>
-          {% endif %}
-        </div>
-    </div>
 {% endblock content %}

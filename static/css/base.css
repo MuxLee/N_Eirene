@@ -10,10 +10,24 @@ html, body {
     width: 100%;
     background-color: #000;
 }
+#jesusChirst {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+}
 header {
     width: 1900px;
     height: 185px;
     position: relative;
+}
+#name_deco {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 68%;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 #Team_name {
     position: absolute;
@@ -23,11 +37,6 @@ header {
     color: #FFFFFF;
     font-size: 70px;
     font-weight: bold;
-}
-#deco1 {
-    width: 300px;
-    height: 130px;
-    position: absolute;
 }
 #search_nav {
     width: 70px;
@@ -191,7 +200,7 @@ header {
     }
     #header {
         width: 414px;
-        background-color: #000;
+        background-color: #FFFFFF;
     }
     header {
         width: 414px;
@@ -201,7 +210,7 @@ header {
         left: 140px;
         top: 5px;
         font-size: 50px;
-        color: #FFFFFF;
+        color: #000;
     }
 
     #search_nav, #drop_down, #open_close_menu {
@@ -227,23 +236,25 @@ header {
         margin-top: 5px 5px 5px 5px;
         margin-bottom: 7px;
         border-radius: 7px;
-        background-color: #FFFFFF;
+        background-color: #000;
         position: relative;
         top: 3px;
     }
     #wrap {
         width: 414px;
         height: 1300px;
+        background-color: #FFFFFF;
     }
     #body {
         width: 414px;
         height: 1100px;
         overflow: hidden;
+        background-color: inherit
     }
     #content {
         width: 414px;
         height: 800px;
-        background-color: #000;
+        background-color: inherit;
     }
 }
 @media (max-width: 375px) {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <title>
+        Login
+    </title>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/signup.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}"/>
+  </head>
+  <body>
+      <div id="signup">
+          <header>
+              <a class="signup_name" href="{% url 'index' %}">
+                  Eirene
+              </a>
+          </header>
+          <div id="signup_form_div">
+              <form action="{% url 'signup' %}" method="post" id="signup_form">
+                  {% csrf_token %}
+                  {% for field in form %}
+                      <div class="label_field_div">
+                          <div class="label">
+                              {{ field.label }}
+                          </div>
+                          <div class="field">
+                              {{ field }}
+                          </div>
+                      </div>
+                  {% endfor %}
+                  <div id="buttons">
+                      <input type="submit" value="회원가입" class="signup_button" id="ok_color"/>
+                      <a href="{% url 'index' %}" id="cancel_color">
+                          <button type="button" class="signup_button">
+                              취소
+                          </button>
+                      </a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </body>
+</html>

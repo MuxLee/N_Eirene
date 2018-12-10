@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.conf import settings
 from Eirene.views import Home, SearchAll
+from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     url(r'^makers/', include('makers.urls', namespace='makers')),
     url(r'^anointing/', include('anointing.urls', namespace='anointing')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/signup/', views.signup, name='signup'),
 ]

@@ -32,4 +32,32 @@ $(document).ready(function () {
     var getBodyHeight = $('body').height();
     $('#unlogin_div').css('left', (getBodyWidth / 2) - (getUnLogin / 2));
     $('#unlogin_div').css('top', (getBodyHeight / 2) - (getUnLoginH / 2));
+
+    // kakao
+    // var firstImg = $('.imageblock:first-of-type img');
+    // var content = "";
+    // if (firstImg.attr("src")) {
+    //     var firstImgSrc = firstImg.attr('src');
+    //     var firstImgRatio = parseInt(firstImg.css('height')) / parseInt(firstImg.css('width'));
+    //     if (firstImgRatio <= 0.27) var firstImgRatio = 0.27;
+    // } else {
+    //       var firstImgSrc = location.origin + '/favicon.ico';
+    //       var firstImgRatio = 1;
+    // }
+    // kakao.init('e6f26aa3bd15becf15521cad6d4ddce7');
+    // function sendLink() {
+    //     kakao.Link.sendTalkLink({
+    //         label:
+    //             '[##_page_title_##]',
+    //             image: {
+    //                 src: firstImgSrc,
+    //                 width: '300'
+    //                 height: paresInt(300 * firstImgRatio)
+    //             }
+    //         webButton: {
+    //             text: 'Eirene',
+    //             url: document.URL
+    //         }
+    //     });
+    // }
 });

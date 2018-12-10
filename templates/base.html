@@ -8,14 +8,18 @@
         {% endblock title %}
     </title>
     {% load staticfiles %}
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/snowfall.jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/unlogin.js' %}"></script>
     <script type="text/javascript" src="{% block extrajavascript %}{% endblock extrajavascript %}"></script>
     <script type="text/javascript" src="{% block extrajavascript2 %}{% endblock extrajavascript2 %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock extrastyle %}"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock extrastyle2 %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/unlogin.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet">
     {% block extrafont %}
     {% endblock extrafont %}
 </head>
@@ -23,6 +27,7 @@
     {% if user.is_active %}
         <div id="header">
             <header>
+                <img src="{% static 'image/deco1.png' %}" id="name_deco"/>
                 <a id="Team_name" href="{% url 'index' %}">
                     Eirene
                 </a>
@@ -126,9 +131,7 @@
             </div>
         </div>
     {% else %}
-        {% block unlogin %}
-            {% include 'unlogin.html' %}
-        {% endblock unlogin %}
+        {% include 'unlogin.html' %}
     {% endif %}
 </body>
 </html>

@@ -1,8 +1,11 @@
 from django.views.generic import TemplateView, ListView
+from django.views.generic.edit import CreateView
 from django.core.paginator import Paginator
 from django.shortcuts import render
+from django.urls import reverse_lazy
 import logging
 from board.models import Board
+from Eirene.forms import CreateUserForm
 
 class Home(ListView):
         model = Board
@@ -49,3 +52,16 @@ class PageableMixin(object):
 
 class SearchAll(TemplateView):
     template_name = 'search_all.html'
+
+def signup(request):
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.signup()
+            return redirect('index')
+    else:
+        form = CreateUserForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'registration/signup.html', context)
