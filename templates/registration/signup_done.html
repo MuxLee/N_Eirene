@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <title>
+        회원가입 완료
+    </title>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/signup_done.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/signup_done.css' %}"/>
+  </head>
+  <body>
+      <div id="signup_done">
+          <header>
+              <a class="signup_done_name">
+                  환영합니다
+              </a>
+          </header>
+          <div id="signup_done_div">
+              <a href="{% url 'index' %}">
+                  <button type="button">
+                      홈
+                  </button>
+              </a>
+              <a href="#">
+                  <button type="button">
+                      로그아웃
+                  </button>
+              </a>
+          </div>
+      </div>
+  </body>
+</html>

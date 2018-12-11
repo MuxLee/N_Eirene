@@ -28,41 +28,40 @@
               </a>
           {% else %}
               <div id="login_form">
-                  <form method="post" action="{% url 'login' %}" id="submit_form">
+                  <form method="post" action="" id="submit_form">
                       {% csrf_token %}
-                      <div id="id_form">
-                          <label for="{{ form.username.id_for_label }}" id="id_color">
-                              ID
-                          </label>
-                          <input class="input_id-pw" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username.html_name }}" type="text" required/>
-                      </div>
-                      <div id="password_form">
-                          <label for="{{ form.password.id_for_label }}" id="pw_color">
-                              PW
-                          </label>
-                          <input class="input_id-pw" id="{{ form.password.id_for_label }}" maxlength="50" name="{{ form.password.html_name }}" type="password" required/>
-                      </div>
-                      <nav id="buttons">
-                          <input type="submit" id="submit_login" value="로그인" class="btn_btns"/>
-                          <a href="{% url 'signup' %}" class="button_size">
-                              <button type="button" id="register" class="btn_btns">
+                      {% for field in login_form %}
+                          <div class="id-pw_form">
+                              {{ field.label_tag }}
+                              {{ field }}
+                              {% if field.errors %}
+                                  {% for error in field.errors %}
+                                      <script>
+                                          var error = "{{ error }}";
+                                          alert(error);
+                                      </script>
+                                  {% endfor %}
+                              {% endif %}
+                          </div>
+                      {% endfor %}
+                      {% if login_form.non_field_errors %}
+                          {% for error in login_form.non_field_errors %}
+                              <!-- <script>
+                                  var error = "{{ error }}";
+                                  alert(error);
+                              </script> -->
+                          {% endfor %}
+                      {% endif %}
+                      <nav id="submit-nav">
+                          <input type="submit" value="로그인" class="buttons" id="login_button"/>
+                          <a href="{% url 'signup' %}">
+                              <button type="button" class="buttons" id="signup_button">
                                   회원가입
                               </button>
                           </a>
-                          <a href="{% url 'index' %}" class="button_size">
-                              <button type="button" id="cancel" class="btn_btns">
-                                  취소
-                              </button>
-                          </a>
                       </nav>
-                      <input type="hidden" name="text" value=""/>
                   </form>
               </div>
-              {% if form.errors %}
-                  <p>
-                      ID 또는 PassWord가 일치하지 않습니다.
-                  </p>
-              {% endif %}
           {% endif %}
       </div>
   </body>

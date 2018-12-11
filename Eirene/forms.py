@@ -2,6 +2,24 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django import forms
 
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        widget = forms.TextInput(
+            attrs = {
+                'class': 'form-control',
+            }
+        ),
+        label = 'ID'
+    )
+    password = forms.CharField(
+        widget = forms.PasswordInput(
+            attrs = {
+                'class': 'form-control',
+            }
+        ),
+        label = "PW"
+    )
+
 class CreateUserForm(forms.Form):
     username = forms.CharField(
         widget = forms.TextInput(
@@ -17,7 +35,7 @@ class CreateUserForm(forms.Form):
         widget = forms.TextInput(
             attrs = {
                 'class': 'form-control',
-                'required': False,
+                'required': True,
             }
         ),
         label = '이름',
@@ -69,11 +87,11 @@ class CreateUserForm(forms.Form):
             raise forms.ValidationError('아이디가 이미 사용중입니다')
         return username
 
-    def clean_password(self):
+    def clean_password2(self):
         password1 = self.cleaned_data['password1']
         password2 = self.cleaned_data['password2']
         if password1 != password2:
-            raise forms.ValidationError('비밀번호와 비밀번호 확인 결과 서로 다릅니다')
+            raise forms.ValidationError('비밀번호와 비밀번호 확인이 서로 다릅니다')
         return password2
 
     def signup(self):

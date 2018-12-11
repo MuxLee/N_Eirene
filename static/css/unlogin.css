@@ -1,15 +1,10 @@
-*{margin: 0; padding: 0;}
-html, body {
-    width: 100%;
-    height: 100%;
-}
-@media (max-width: 430px) {
+@media (min-width: 431px) and (max-width: 500px) {
     html, body {
-        width: 414px;
+        width: 100%;
         height: 736px;
     }
     #login_div {
-        width: 350px;
+        width: 80%;
         height: 70%;
         background-color: #FFFFFF;
         position: relative;
@@ -53,4 +48,157 @@ html, body {
     #color2 {
         color: #FB9565;
     }
+}
+@media (min-width: 415px) and (max-width: 430px) {
+    html, body {
+        width: 430px;
+        height: 736px;
+    }
+    #login_div {
+        width: 350px;
+        height: 70%;
+        background-color: #FFFFFF;
+        position: relative;
+        border-radius: 10px 10px 10px 10px;
+        display: none;
+    }
+    #another_header {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: 100px;
+    }
+    #login_name {
+        font-size: 70px;
+        font-family: 'Jua', sans-serif;
+    }
+    #choice {
+        width: auto;
+        height: 90px;
+        position: relative;
+        top: 45px;
+    }
+    .boxs {
+        width: 90px;
+        height: 50px;
+        float: left;
+        margin-left: 30px;
+        position: relative;
+        left: 40px;
+        border-radius: 10px 10px 10px 10px;
+        text-align: center;
+        box-shadow: 3px 3px 5px 2px gainsboro;
+    }
+    .boxs > a {
+        text-decoration: none;
+        line-height: 50px;
+    }
+    #color1 {
+        color: #65BAFB;
+    }
+    #color2 {
+        color: #FB9565;
+    }
+}
+@media (max-width: 414px) {
+      html, body {
+          width: 414px;
+          height: 736px;
+      }
+      #login_div {
+          width: 350px;
+          height: 70%;
+          background-color: #FFFFFF;
+          position: relative;
+          border-radius: 10px 10px 10px 10px;
+          display: none;
+      }
+      #another_header {
+          width: 100%;
+          text-align: center;
+          position: relative;
+          top: 100px;
+      }
+      #login_name {
+          font-size: 70px;
+          font-family: 'Jua', sans-serif;
+      }
+      #choice {
+          width: auto;
+          height: 90px;
+          position: relative;
+          top: 150px;
+      }
+      .boxs {
+          width: 90px;
+          height: 50px;
+          float: left;
+          margin-left: 30px;
+          position: relative;
+          left: 40px;
+          border-radius: 10px 10px 10px 10px;
+          text-align: center;
+          box-shadow: 3px 3px 5px 2px gainsboro;
+      }
+      .boxs > a {
+          text-decoration: none;
+          line-height: 50px;
+      }
+      #color1 {
+          color: #65BAFB;
+      }
+      #color2 {
+          color: #FB9565;
+      }
+  }
+  @media (max-width: 400px) {
+      html, body {
+          width: 400px;
+          height: 736px;
+      }
+      #login_div {
+          width: 350px;
+          height: 70%;
+          background-color: #FFFFFF;
+          position: relative;
+          border-radius: 10px 10px 10px 10px;
+          display: none;
+      }
+      #another_header {
+          width: 100%;
+          text-align: center;
+          position: relative;
+          top: 100px;
+      }
+      #login_name {
+          font-size: 70px;
+          font-family: 'Jua', sans-serif;
+      }
+      #choice {
+          width: auto;
+          height: 90px;
+          position: relative;
+          top: 150px;
+      }
+      .boxs {
+          width: 90px;
+          height: 50px;
+          float: left;
+          margin-left: 30px;
+          position: relative;
+          left: 40px;
+          border-radius: 10px 10px 10px 10px;
+          text-align: center;
+          box-shadow: 3px 3px 5px 2px gainsboro;
+      }
+      .boxs > a {
+          text-decoration: none;
+          line-height: 50px;
+      }
+      #color1 {
+          color: #65BAFB;
+      }
+      #color2 {
+          color: #FB9565;
+      }
 }

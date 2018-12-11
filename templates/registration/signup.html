@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
     <title>
-        Login
+        회원가입
     </title>
     {% load staticfiles %}
     <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet"/>
@@ -29,8 +29,24 @@
                           <div class="field">
                               {{ field }}
                           </div>
+                          {% if field.errors %}
+                              {% for error in field.errors %}
+                                  <script>
+                                      var error = "{{ error }}";
+                                      alert(error);
+                                  </script>
+                              {% endfor %}
+                          {% endif %}
                       </div>
                   {% endfor %}
+                  {% if form.non_field_errors %}
+                      {% for error in login_form.non_field_errors %}
+                          <script>
+                              var error = "{{ error }}";
+                              alert(error);
+                          </script>
+                      {% endfor %}
+                  {% endif %}
                   <div id="buttons">
                       <input type="submit" value="회원가입" class="signup_button" id="ok_color"/>
                       <a href="{% url 'index' %}" id="cancel_color">

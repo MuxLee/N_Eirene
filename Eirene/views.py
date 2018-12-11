@@ -1,11 +1,12 @@
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import CreateView
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.contrib.auth import login as django_login, logout as django_logout, authenticate
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 import logging
 from board.models import Board
-from Eirene.forms import CreateUserForm
+from Eirene.forms import LoginForm, CreateUserForm
 
 class Home(ListView):
         model = Board
@@ -53,6 +54,27 @@ class PageableMixin(object):
 class SearchAll(TemplateView):
     template_name = 'search_all.html'
 
+def login(request):
+    if request.method == 'POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            username = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
+            user = authenticate(
+                username = username,
+                password = password
+            )
+            if user:
+                django_login(request, user)
+                return redirect('index')
+            login_form.add_error(None, '아이디 또는 비밀번호가 올바르지 않습니다')
+    else:
+        login_form = LoginForm()
+    context = {
+        'login_form': login_form,
+    }
+    return render(request, 'registration/login.html', context)
+
 def signup(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -65,3 +87,6 @@ def signup(request):
         'form': form,
     }
     return render(request, 'registration/signup.html', context)
+
+def signup_done(request):
+    return render(request, 'registration/signup_done.html')

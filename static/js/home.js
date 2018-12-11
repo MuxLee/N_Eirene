@@ -20,12 +20,7 @@ $(document).ready(function () {
         $('#anointing_text').css('top', (text_left / 2) - (anointing_text_width / 2));
     } else {
     // image_hover_text image 위치 구현
-        $('#jus_text').css('left', (text_left / 2) - (jus_text_width / 2));
-        $('#jus_text').css('top', (text_top / 2) - same_text_height / 2);
-        $('#makers_text').css('left', ((text_left * 2) - (text_left / 2)) - (makers_text_width / 2));
-        $('#makers_text').css('top', (text_top / 2) - same_text_height / 2);
-        $('#anointing_text').css('left', ((text_left * 3) - (text_left / 2)) - (anointing_text_width / 2));
-        $('#anointing_text').css('top', (text_top / 2) - same_text_height / 2);
+
     }
     // ???_link > text mobile 구현
     if (getIphonePlusWidth <= 430) {
@@ -47,7 +42,7 @@ $(document).ready(function () {
             // mouseOver & moustOut효과 구현
             $('#jus_link').mouseover(function () {
                 $('#jus_text').fadeIn(600);
-                $(this).css('opacity', '0.5');
+                $(this).css('opacity', '0.8');
             });
             $('#jus_link').mouseout(function () {
                 $('#jus_text').fadeOut(100);
@@ -55,7 +50,7 @@ $(document).ready(function () {
             });
             $('#makers_link').mouseover(function () {
                 $('#makers_text').fadeIn(600);
-                $(this).css('opacity', '0.3');
+                $(this).css('opacity', '0.8');
             });
             $('#makers_link').mouseout(function () {
                 $('#makers_text').fadeOut(100);
@@ -63,7 +58,7 @@ $(document).ready(function () {
             });
             $('#anointing_link').mouseover(function () {
                 $('#anointing_text').fadeIn(600);
-                $(this).css('opacity', '0.5');
+                $(this).css('opacity', '0.8');
             });
             $('#anointing_link').mouseout(function () {
                 $('#anointing_text').fadeOut(100);

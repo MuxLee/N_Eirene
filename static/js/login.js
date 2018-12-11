@@ -9,4 +9,9 @@ $(document).ready(function () {
 
     var getLoginForm = $('#login_form').width();
     $('#login_form').css('left', (getLoginW / 2) - (getLoginForm / 2));
+
+    //
+    $('label').addClass('label_class');
+    $('label').eq(0).text('ID').css('color', '#65BAFB');
+    $('label').eq(1).text('PW').css('color', '#FB9565');
 });

@@ -60,4 +60,20 @@ $(document).ready(function () {
     //         }
     //     });
     // }
+
+    var getWindowW = $(window).width();
+    var getTeamNameW = $('#Team_name').width();
+    var getNameDeco = $('#name_deco').width();
+    $('#open_close_menu, #search_nav').css('left', '93%');
+    $('#Team_name').css('left', (getWindowW / 2) - (getTeamNameW / 2));
+    $('#name_deco').css('left', (getWindowW / 2) + 100);
+    $(window).resize(function () {
+          var getWindowW = $(window).width();
+          $('#Team_name').css('left', (getWindowW / 2) - (getTeamNameW / 2));
+          $('#name_deco').css('left', (getWindowW / 2) + 100);
+
+          if (getWindowW <= 1000) {
+              $('#open_close_menu, #search_nav').css('left', '90%');
+          }
+    });
 });
