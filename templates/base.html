@@ -24,14 +24,12 @@
     {% endblock extrafont %}
 </head>
 <body>
-    <!-- {% if user.is_active %} -->
         <div id="header">
             <header>
                 <img src="{% static 'image/deco1.png' %}" id="name_deco"/>
                 <a id="Team_name" href="{% url 'index' %}">
                     Eirene
                 </a>
-                <!-- <img src="{% static 'image/deco1.png' %}" id="deco1"/> -->
                 <nav id="search_nav">
                     <button type="button" id="search_button">
                         <a href="{% url 'search_all' %}">
@@ -130,8 +128,5 @@
                 </div>
             </div>
         </div>
-    <!-- {% else %}
-        {% include 'unlogin.html' %}
-    {% endif %} -->
 </body>
 </html>
