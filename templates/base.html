@@ -24,6 +24,7 @@
     {% endblock extrafont %}
 </head>
 <body>
+    {% if user.is_active %}
         <div id="header">
             <header>
                 <img src="{% static 'image/deco1.png' %}" id="name_deco"/>
@@ -128,5 +129,8 @@
                 </div>
             </div>
         </div>
+    {% else %}
+        {% include 'unlogin.html' %}
+    {% endif %}
 </body>
 </html>
