@@ -62,18 +62,29 @@ $(document).ready(function () {
     // }
 
     var getWindowW = $(window).width();
+    var getWindowH = $(window).height();
     var getTeamNameW = $('#Team_name').width();
     var getNameDeco = $('#name_deco').width();
     $('#open_close_menu, #search_nav').css('left', '93%');
     $('#Team_name').css('left', (getWindowW / 2) - (getTeamNameW / 2));
     $('#name_deco').css('left', (getWindowW / 2) + 100);
+
+    if (getWindowW <= 915) {
+        $('#mobile_bottom_img').css('display', 'inline');
+        $('#mobile_bottom_img').css('width', getWindowW);
+        var getMImgH = $('#mobile_bottom_img').height();
+        $('#mobile_bottom_img').css('top', 300 - getMImgH);
+
+    }
+
     $(window).resize(function () {
           var getWindowW = $(window).width();
+          var getWindowH = $(window).height();
           $('#Team_name').css('left', (getWindowW / 2) - (getTeamNameW / 2));
           $('#name_deco').css('left', (getWindowW / 2) + 100);
-
           if (getWindowW <= 1000) {
               $('#open_close_menu, #search_nav').css('left', '90%');
           }
+          $('#mobile_bottom_img').css('width', getWindowW);
     });
 });

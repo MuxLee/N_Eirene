@@ -12,13 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/snowfall.jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/unlogin.js' %}"></script>
     <script type="text/javascript" src="{% block extrajavascript %}{% endblock extrajavascript %}"></script>
     <script type="text/javascript" src="{% block extrajavascript2 %}{% endblock extrajavascript2 %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock extrastyle %}"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock extrastyle2 %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/unlogin.css' %}"/>
     <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet">
     {% block extrafont %}
     {% endblock extrafont %}
@@ -130,7 +128,28 @@
             </div>
         </div>
     {% else %}
-        {% include 'unlogin.html' %}
+        <header id="another_header">
+            <h1 id="login_name">
+                Eirene
+            </h1>
+        </header>
+        <div id="login_div">
+            <div id="choice">
+                <div id="color_line"></div>
+                <nav id="first-box" class="boxs">
+                    <a href="{% url 'login' %}" id="color1">
+                        로그인
+                    </a>
+                </nav>
+                <nav id="second-box" class="boxs">
+                    <a href="{% url 'signup' %}" id="color2">
+                        회원가입
+                    </a>
+                </nav>
+            </div>
+        </div>
+        {% load staticfiles %}
+        <img src="{% static 'image/mobilebottom.png' %}" alt="mobile_bottom_image" id="mobile_bottom_img"/>
     {% endif %}
 </body>
 </html>
