@@ -243,72 +243,15 @@ header {
     width:0;
     height: 0;
 }
-@media screen and (max-width: 1920px) {
-    html, body {
-        height: auto;
-    }
-    #another_header {
-        margin-bottom: 90px;
-    }
+@media screen (max-width: 1920px) {
     #login_div {
-        width: 85%;
-        height: 200px;
-    }
-    #choice {
-        width: 100%;
-        height: 100%;
-    }
-    .boxs {
-        width: 80px;
-        height: 45px;
-    }
-    #first-box {
-        left: 15%;
-    }
-    #mobile_bottom_img {
-        width: 100%;
-        height: 200px;
+        width: 800px;
+        border: 1px solid red;
     }
 }
-/* 갤럭시S8,S8+, 갤럭시노트8, LG(G6, V30) */
-@media screen and (max-width: 1440px) {
-    html, body {
-        height: auto;
-    }
+@media screen (max-device-width: 1440px) {
     #login_div {
         width: 85%;
-        height: 200px;
-    }
-    #choice {
-        width: 100%;
-        height: 100%;
-    }
-    .boxs {
-        width: 80px;
-        height: 45px;
-    }
-    #first-box {
-        left: 15%;
-    }
-}
-/* 갤럭시S5광대역LTE-A, 갤럭시S6,S7, 갤럭시노트4,5,7 */
-@media screen and (max-width: 1600px) {
-    html, body {
-        height: auto;
-    }
-    #login_div {
-        width: 85%;
-        height: 200px;
-    }
-    #choice {
-        width: 100%;
-        height: 100%;
-    }
-    .boxs {
-        width: 80px;
-        height: 45px;
-    }
-    #first-box {
-        left: 15%;
+        border: 1px solid blue;
     }
 }
