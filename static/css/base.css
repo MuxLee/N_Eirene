@@ -283,5 +283,6 @@ header {
     }
     #first-box {
         left: 15%;
+        border: 1px solid red;
     }
 }
