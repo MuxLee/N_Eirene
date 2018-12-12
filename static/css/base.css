@@ -243,13 +243,7 @@ header {
     width:0;
     height: 0;
 }
-@media screen (max-width: 1920px) {
-    #login_div {
-        width: 800px;
-        border: 1px solid red;
-    }
-}
-@media screen (max-device-width: 1440px) {
+@media screen (max-device-width: 1920px) {
     #login_div {
         width: 85%;
         border: 1px solid blue;
