@@ -1,9 +1,21 @@
+html, body {
+    height: auto;
+}
+#another_header {
+    margin-bottom: 80px;
+}
+#login_div {
+    width: 85%;
+    height: 200px;
+}
+#choice {
+    width: 100%;
+    height: 100%;
+}
+.boxs {
+    width: 5em;
+    height: 45px;
+}
 #first-box {
     margin-left: -20px;
-}
-#mobile_bottom_img {
-    width: 100%;
-    height: 150px;
-    bottom: 0em;
-    position: absolute;
 }

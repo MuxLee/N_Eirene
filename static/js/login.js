@@ -1,14 +1,22 @@
 $(document).ready(function () {
-    var getHtmlW = $('html').width();
-    var getHtmlH = $('html').height();
+    var getLogWindowW = $(window).width();
+    var getLogWindowH = $(window).height();
     var getLoginW = $('#login').width();
     var getLoginH = $('#login').height();
-    $('#login').css('left', (getHtmlW / 2) - (getLoginW / 2));
-    $('#login').css('top', (getHtmlH / 2) - (getLoginH / 2));
+    $('#login').css('left', (getLogWindowW / 2) - (getLoginW / 2));
+    $('#login').css('top', (getLogWindowH / 2) - (getLoginH / 2));
     $('#login').fadeIn(600);
-
-    var getLoginForm = $('#login_form').width();
-    $('#login_form').css('left', (getLoginW / 2) - (getLoginForm / 2));
+    $(window).resize(function () {
+        var getLogWindowW = $(window).width();
+        var getLogWindowH = $(window).height();
+        var getLoginW = $('#login').width();
+        var getLoginH = $('#login').height();
+        $('#login').css('left', (getLogWindowW / 2) - (getLoginW / 2));
+        $('#login').css('top', (getLogWindowH / 2) - (getLoginH / 2));
+        if (getLogWindowW <= 750) {
+            $('#login').fadeIn(600);
+        }
+    });
 
     //
     $('label').addClass('label_class');

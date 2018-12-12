@@ -23,3 +23,11 @@ html, body {
     bottom: 0em;
     position: absolute;
 }
+#login {
+    width:85%;
+    height: 500px;
+    background-color: #595959;
+    position: relative;
+    border-radius: 10px 10px 10px 10px;
+    display: none;
+}

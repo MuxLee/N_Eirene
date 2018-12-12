@@ -6,11 +6,12 @@
         Login
     </title>
     {% load staticfiles %}
-        <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{% static 'js/login.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
-
+    <link rel="stylesheet" href="{% static 'login_css/login_m.css' %}" media="only screen and (max-width: 750px)"/>
+    <link rel="stylesheet" href="{% static 'login_css/login_m_500.css' %}" media="only screen and (max-width: 500px)"/>
   </head>
   <body>
       <div id="login">
