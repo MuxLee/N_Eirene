@@ -243,6 +243,26 @@ header {
     width:0;
     height: 0;
 }
+@media screen and (max-width: 1900px) {
+    html, body {
+        height: auto;
+    }
+    #login_div {
+        width: 85%;
+        height: 200px;
+    }
+    #choice {
+        width: 100%;
+        height: 100%;
+    }
+    .boxs {
+        width: 80px;
+        height: 45px;
+    }
+    #first-box {
+        left: 15%;
+    }
+}
 /* 갤럭시S8,S8+, 갤럭시노트8, LG(G6, V30) */
 @media screen and (max-width: 1440px) {
     html, body {
