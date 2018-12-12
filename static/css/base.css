@@ -247,6 +247,9 @@ header {
     html, body {
         height: auto;
     }
+    #another_header {
+        margin-bottom: 90px;
+    }
     #login_div {
         width: 85%;
         height: 200px;
