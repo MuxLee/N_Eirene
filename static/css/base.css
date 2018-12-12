@@ -260,6 +260,9 @@ header {
         width: 80px;
         height: 45px;
     }
+    #first-box {
+        left: 15%;
+    }
 }
 /* 갤럭시S5광대역LTE-A, 갤럭시S6,S7, 갤럭시노트4,5,7 */
 @media screen and (max-width: 1600px) {
