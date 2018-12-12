@@ -81,6 +81,8 @@ $(document).ready(function () {
           $('#name_deco').css('left', (getWindowW / 2) + 100);
           if (getWindowW <= 1000) {
               $('#open_close_menu, #search_nav').css('left', '90%');
+          } else if (getWindowW <= 750) {
+              $('#mobile_bottom_img').css('width', '100%');
           }
     });
 });

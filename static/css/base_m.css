@@ -13,13 +13,12 @@ html, body {
     height: 100%;
 }
 .boxs {
-    width: 80px;
+    width: 5em;
     height: 45px;
-}
-#first-box {
-    left: 15%;
 }
 #mobile_bottom_img {
     width: 100%;
+    margin-top: 50px;
     height: 200px;
+    bottom: 0em;
 }
