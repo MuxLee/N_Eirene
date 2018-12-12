@@ -411,6 +411,9 @@ header {
         height: 1100px;
         overflow: hidden;
     }
+    #another_header {
+        margin-bottom: 50px;
+    }
     #login_div {
         width: 300px;
     }
@@ -422,3 +425,4 @@ header {
         height: 157px;
     }
 }
+@media (max-width: )
