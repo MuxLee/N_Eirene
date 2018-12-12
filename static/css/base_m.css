@@ -21,4 +21,5 @@ html, body {
     margin-top: 50px;
     height: 200px;
     bottom: 0em;
+    position: absolute;
 }
