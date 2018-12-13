@@ -1,3 +1,71 @@
+html, body {
+   overflow: hidden;
+}
+header {
+    height: 100px;
+    position: relative;
+}
+#Team_name {
+    top: 5%;
+    font-size: 50px;
+}
+#name_deco {
+    top: 10px;
+}
+#search_nav {
+    display: none;
+}
+#open_close_menu {
+    display: none;
+}
+#m_menu {
+    display: block;
+    width: 10%;
+    height: 40%;
+    float: right;
+    margin-right: 20px;
+    background-color: inherit;
+    position: relative;
+    top: 50%;
+}
+#m_open_close_menu {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: inherit;
+    border: none;
+}
+.m_open_close_button_line {
+    width: 95%;
+    height: 4px;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+#drop_down {
+    top: 0;
+    background-color: #FFFFFF;
+    display: none;
+    height: auto;
+    position: absolute;
+}
+#drop_down_menu {
+    height: auto;
+}
+#drop_down_ul {
+    display: none;
+}
+#m_list_menu {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+.list_name {
+    font-size: 25px;
+}
 #another_header {
     margin-bottom: 80px;
 }

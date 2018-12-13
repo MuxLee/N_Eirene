@@ -8,12 +8,8 @@ html, body {
 }
 #header {
     width: 100%;
+    height: auto;
     background-color: #FFFFFF;
-}
-#jesusChirst {
-    width: 100px;
-    height: 50px;
-    position: absolute;
 }
 header {
     width: 100%;

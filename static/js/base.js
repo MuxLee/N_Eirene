@@ -20,10 +20,6 @@ $(document).ready(function () {
             Open_Close_Click = Open_Close_Click * -1;
         }
     });
-    // mobile version menu line 중앙 정렬
-    var getMOPwidth = $('#m_open_close_menu').width();
-    var getMenuLine = $('.m_open_close_button_line').width();
-    $('.m_open_close_button_line').css('left', (getMOPwidth / 2) - (getMenuLine / 1.9));
 
     //
     var getUnLogin = $('#unlogin_div').width();
@@ -68,11 +64,23 @@ $(document).ready(function () {
     $('#open_close_menu, #search_nav').css('left', '93%');
     $('#Team_name').css('left', (getWindowW / 2) - (getTeamNameW / 2));
     $('#name_deco').css('left', (getWindowW / 2) + 100);
-
-    if (getWindowW <= 915) {
-        $('#mobile_bottom_img').css('display', 'inline');
-        $('#mobile_bottom_img').css('width', getWindowW);
+    if (getWindowW <= 500) {
+        var getHeaderH = $('#header').height();
+        $('#name_deco').css('left', (getWindowW / 2) + 70);
+        $('#drop_down').css('top', getHeaderH);
+        for (var count = 0; count < 3; count++) {
+            if (count == 0)
+                $('.drop_down_name').eq(count).text('J-US');
+            else if (count == 1)
+                $('.drop_down_name').eq(count).text('Makers');
+            else if (count == 2)
+                $('.drop_down_name').eq(count).text('Anointing');
+        }
     }
+    $('#m_open_close_menu').click(function () {
+        $('#drop_down').fadeIn(600);
+    });
+
 
     $(window).resize(function () {
           var getWindowW = $(window).width();
@@ -81,8 +89,6 @@ $(document).ready(function () {
           $('#name_deco').css('left', (getWindowW / 2) + 100);
           if (getWindowW <= 1000) {
               $('#open_close_menu, #search_nav').css('left', '90%');
-          } else if (getWindowW <= 750) {
-              $('#mobile_bottom_img').css('width', '100%');
           }
     });
 });
