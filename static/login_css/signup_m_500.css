@@ -1,0 +1,81 @@
+#signup {
+    width: 85%;
+    height: 70%;
+    background-color: #FFFFFF;
+    position: relative;
+    border-radius: 10px 10px 10px 10px;
+    display: none;
+}
+header {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.signup_name {
+    font-size: 70px;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Jua', sans-serif;
+}
+#signup_form_div {
+    width: 95%;
+    height: 75%;
+    position: relative;
+    background-color: inherit;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid gainsboro;
+}
+#signup_form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.label_field_div {
+    width: 100%;
+    height: 35px;
+    position: relative;
+    top: 5px;
+    margin-top: 17px;
+}
+.label {
+    width: auto;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    float: left;
+}
+.field {
+    width: 200px;
+    height: 30px;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+.form-control {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+#buttons {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 10%;
+}
+.signup_button {
+    width: 70px;
+    height: 30px;
+    position: relative;
+    left: 25%;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 14px;
+}
+#ok_color {
+    color: #65BAFB;
+    font-weight: bold;
+}

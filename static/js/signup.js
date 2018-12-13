@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    var getHtmlW = $('html').width();
-    var getHtmlH = $('html').height();
+    var getSignWindowW = $(window).width();
+    var getSignWindowH = $(window).height();
     var getSignupW = $('#signup').width();
     var getSignupH = $('#signup').height();
-    $('#signup').css('left', (getHtmlW / 2) - (getSignupW / 2));
-    $('#signup').css('top', (getHtmlH / 2) - (getSignupH / 2));
+    $('#signup').css('left', (getSignWindowW / 2) - (getSignupW / 2));
+    $('#signup').css('top', (getSignWindowH / 2) - (getSignupH / 2));
     $('#signup').fadeIn(600);
 
     var getFormDivW = $('#signup_form_div').width();
