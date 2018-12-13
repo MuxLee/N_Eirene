@@ -19,7 +19,7 @@ header {
 }
 #signup_form_div {
     width: 95%;
-    height: 75%;
+    height: 80%;
     position: relative;
     background-color: inherit;
     border-radius: 10px 10px 10px 10px;
@@ -107,15 +107,19 @@ header {
         margin-left: 5px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
     #signup {
         height: 70%;
+    }
+    #signup_form_div {
+        height: 80%;
     }
     .label_field_div {
         height: 40px;
     }
     .label {
-        font-size: 15px;
+        margin-left: 5px;
+        font-size: 14px;
     }
     .form-control {
         height: 35px;
@@ -125,5 +129,32 @@ header {
         height: 35px;
         left: 20%;
         margin-left: 5px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    #signup {
+        height: 80%;
+    }
+    .label {
+        font-size: 13px;
+    }
+    .field {
+        margin-right: 5px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    #signup {
+        height: 85%;
+    }
+    #signup_form_div {
+        height: 80%;
+    }
+    .label {
+        font-size: 13px;
+        margin-left: 5px;
+        text-align: center;
+    }
+    .form-control {
+        width: 150px;
     }
 }
