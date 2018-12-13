@@ -19,8 +19,8 @@
     margin-bottom: 10px;
 }
 .label_class {
-    font-size: 25px;
-    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size: 30px;
     line-height: 45px;
     margin-left: 20px;
 }
@@ -46,8 +46,8 @@
     border: 1px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
     color: #65BAFB;
     position: relative;
     left: 20%;
@@ -63,7 +63,7 @@
     border: 1px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
     color: #FB9565;
 }

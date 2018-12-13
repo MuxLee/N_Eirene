@@ -39,7 +39,8 @@
     height: 30px;
 }
 .label_class {
-    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+    font-size: 30px;
 }
 .form-control {
     width: 60%;
@@ -61,8 +62,8 @@
     border: 1px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
     color: #65BAFB;
     position: relative;
     left: 25%;
@@ -78,7 +79,7 @@
     border: 1px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
     color: #FB9565;
 }
