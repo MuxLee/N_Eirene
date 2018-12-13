@@ -6,25 +6,6 @@
     border-radius: 10px 10px 10px 10px;
     display: none;
 }
-#login_name_header {
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-.login_name {
-    font-size: 70px;
-    font-family: 'Jua', sans-serif;
-    text-decoration: none;
-    color: #000;
-}
-#login_form {
-    width: 95%;
-    height: 70%;
-    margin: 0 auto;
-    position: relative;
-    top: 20px;
-    border: 1px solid gainsboro;
-}
 #submit_form {
     width: 100%;
     height: auto;
@@ -34,34 +15,55 @@
 }
 .id-pw_form {
     width: 100%;
-    height: 40px;
-    margin-bottom: 30px;
+    height: 42px;
+    margin-bottom: 10px;
 }
 .label_class {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    margin-left: 25px;
-    float: left;
+    line-height: 45px;
+    margin-left: 20px;
 }
 .form-control {
     width: 60%;
     height: 40px;
     border: 1px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
-    margin-right: 25px;
-    float: right;
     text-align: center;
+    float: right;
+    margin-right: 10px;
 }
 #submit-nav {
     width: 100%;
     height: auto;
     position: relative;
+    top: 50px;
 }
-/* #login_button {
-    left: 70px;
+#login_button {
+    width: 70px;
+    height: 35px;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
     color: #65BAFB;
+    position: relative;
+    left: 25%;
+}
+#signup_a {
+    position: relative;
+    left: 25%;
 }
 #signup_button {
-    left: 150px;
+    width: 70px;
+    height: 35px;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
     color: #FB9565;
-} */
+}
