@@ -1,6 +1,6 @@
 #signup {
     width: 85%;
-    height: 70%;
+    height: 80%;
     background-color: #FFFFFF;
     position: relative;
     border-radius: 10px 10px 10px 10px;
@@ -44,16 +44,19 @@ header {
     text-align: center;
     font-size: 12px;
     float: left;
+    line-height: 30px;
+    margin-left: 15px;
+    text-align: center;
 }
 .field {
-    width: 200px;
+    width: auto;
     height: 30px;
     position: relative;
     float: right;
     margin-right: 10px;
 }
 .form-control {
-    width: 200px;
+    width: 170px;
     height: 30px;
     border-radius: 10px 10px 10px 10px;
     border: 1px solid gainsboro;
@@ -78,4 +81,49 @@ header {
 #ok_color {
     color: #65BAFB;
     font-weight: bold;
+}
+@media only screen and (max-height: 580px) {
+    .form-control {
+        width: 150px;
+        float: right;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .label_field_div {
+        height: 40px;
+    }
+    .label {
+        font-size: 15px;
+        line-height: 40px;
+    }
+    .form-control {
+        width: 190px;
+        height: 38px;
+    }
+    .signup_button {
+        width: 90px;
+        height: 38px;
+        left: 20%;
+        margin-left: 5px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #signup {
+        height: 70%;
+    }
+    .label_field_div {
+        height: 40px;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .form-control {
+        height: 35px;
+    }
+    .signup_button {
+        width: 80px;
+        height: 35px;
+        left: 20%;
+        margin-left: 5px;
+    }
 }
