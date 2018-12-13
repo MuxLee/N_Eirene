@@ -1,5 +1,6 @@
 html, body {
     width: auto;
+    height: 750px;
 }
 #login {
     width: 75%;

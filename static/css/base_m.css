@@ -1,5 +1,5 @@
 html, body {
-    height: auto;
+    height: 750px;
 }
 #another_header {
     margin-bottom: 80px;
@@ -15,13 +15,6 @@ html, body {
 .boxs {
     width: 5em;
     height: 45px;
-}
-#mobile_bottom_img {
-    width: 100%;
-    margin-top: 50px;
-    height: 200px;
-    bottom: 0em;
-    position: absolute;
 }
 #login {
     width:85%;
