@@ -10,6 +10,8 @@
     width: 100%;
     height: auto;
     text-align: center;
+    position: relative;
+    top: 10px;
 }
 .login_name {
     font-size: 70px;
@@ -46,11 +48,37 @@
     border-radius: 10px 10px 10px 10px;
     float: right;
 }
-/* #login_button {
-    left: 70px;
+#submit-nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50px;
+}
+#login_button {
+    width: 70px;
+    height: 35px;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
     color: #65BAFB;
+    position: relative;
+    left: 25%;
+}
+#signup_a {
+    position: relative;
+    left: 25%;
 }
 #signup_button {
-    left: 150px;
+    width: 70px;
+    height: 35px;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
     color: #FB9565;
-} */
+}
