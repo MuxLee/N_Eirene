@@ -147,7 +147,10 @@ header {
         height: 85%;
     }
     #signup_form_div {
-        height: 80%;
+        height: 75%;
+    }
+    .label_field_div {
+        margin-top: 10px;
     }
     .label {
         font-size: 13px;
