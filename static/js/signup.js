@@ -5,8 +5,12 @@ $(document).ready(function () {
     var getSignupH = $('#signup').height();
     $('#signup').css('left', (getSignWindowW / 2) - (getSignupW / 2));
     $('#signup').css('top', (getSignWindowH / 2) - (getSignupH / 2));
+    $('#signup').css('height', getSignupH);
     $('#signup').fadeIn(600);
-
+    $(window).resize(function () {
+        var getSignupH = $('#signup').height();
+        $('#signup').css('height', getSignupH);
+    });
     var getFormDivW = $('#signup_form_div').width();
     var getLabelFieldDivW = $('.label_field_div').width();
     $('#signup_form_div').css('left', (getSignupW / 2) - (getFormDivW / 2));
