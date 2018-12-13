@@ -7,8 +7,8 @@ html, body {
 #login {
     width: 70%;
     height: 70%;
+    border: 2px solid gainsboro;
     border-radius: 10px 10px 10px 10px;
-    box-shadow: 0px 0px 2px 2px gainsboro;
     position: relative;
     background-color: #FFFFFF;
 }

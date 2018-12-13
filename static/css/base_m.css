@@ -13,11 +13,3 @@
     width: 5em;
     height: 45px;
 }
-#login {
-    width:85%;
-    height: 500px;
-    background-color: #595959;
-    position: relative;
-    border-radius: 10px 10px 10px 10px;
-    display: none;
-}
