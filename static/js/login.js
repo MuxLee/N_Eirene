@@ -5,6 +5,7 @@ $(document).ready(function () {
     var getLoginH = $('#login').height();
     $('#login').css('left', (getLogWindowW / 2) - (getLoginW / 2));
     $('#login').css('top', (getLogWindowH / 2) - (getLoginH / 2));
+    $('#login').css('width', getLoginH);
     $('#login').fadeIn(600);
     $(window).resize(function () {
         var getLogWindowW = $(window).width();
@@ -13,6 +14,7 @@ $(document).ready(function () {
         var getLoginH = $('#login').height();
         $('#login').css('left', (getLogWindowW / 2) - (getLoginW / 2));
         $('#login').css('top', (getLogWindowH / 2) - (getLoginH / 2));
+        $('#login').css('width' getLoginH);
         if (getLogWindowW <= 750) {
             $('#login').fadeIn(600);
         }
