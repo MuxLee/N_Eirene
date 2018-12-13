@@ -25,7 +25,7 @@ $(document).ready(function () {
         $('.form-control').eq(1).css('background', '#F3F3F3');
         $('.form-control').eq(0).css('background', '#FFFFFF');
     });
-    alert(getLogWindowH);
+    alert(getLogWindowH + "...");
     //
     $('label').addClass('label_class');
     $('label').eq(0).text('ID').css('color', '#65BAFB');
