@@ -116,3 +116,6 @@ header {
 #first-box {
     margin-left: -20px;
 }
+#content {
+    height: 800px;
+}

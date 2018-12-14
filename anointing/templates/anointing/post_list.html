@@ -1,30 +1,57 @@
-<h1>
-    Post List
-</h1>
-{% for post in posts %}
-    <h2>
-        <a href="{{ post.get_absolute_url }}">
-            {{ post.title }}
+{% extends 'home.html' %}
+{% block content %}
+    <div id="free_board_div">
+        <a href="{% url 'anointing:post_list' %}" id="board_name">
+            Anointing
         </a>
-    </h2>
-    {{ post.modify_date|date:"N d, Y" }}
-    <p>
-        {{ post.description }}
-    </p>
-{% endfor %}
-<br/>
-<div>
-    <span>
-        {{% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">
-                    PreviousPage
-                </a>
-            {% endif %}
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">
-                    NextPage
-                </a>
-            {% endif %}
-    </span>
-</div>
+        <table id="free_board">
+            <tr>
+                <th class="td_style" id="m_none_num">
+                    글 번호
+                </th>
+                <th class="td_style" id="m_show_editer">
+                    작성자
+                </th>
+                <th class="td_style" id="m_show_title">
+                    제목
+                </th>
+                <th class="td_style" id="m_none_content">
+                    내용
+                </th>
+                <th class="td_style" id="m_none_data">
+                    날짜
+                </th>
+                <th class="td_style" id="m_none_description">
+                    분류
+                </th>
+            </tr>
+            {% for post in posts %}
+                <tr>
+                    <td class="bottom_line" id="edit_no_td">
+                        {{ post.id }}
+                    </td>
+                    <td class="bottom_line" id="edit_user_name_td">
+                        {{ post.author }}
+                    </td>
+                    <td class="bottom_line" id="edit_user_title_td">
+                        <a href="{{ post.get_absolute_url }}" class="absolute_url_font">
+                            {{ post.title|truncatechars:20 }}
+                        </a>
+                    </td>
+                    <td class="bottom_line" id="edit_user_content_td">
+                        <a href="{{ post.get_absolute_url }}" class="absolute_url_font">
+                            {{ post.content|truncatechars:20 }}
+                        </a>
+                    </td>
+                    <td class="bottom_line" id="edit_user_data_td">
+                        {{ post.modify_date|date:"M d" }}일<br/>
+                        {{ post.modify_date|date:"h:i" }}분
+                    </td>
+                    <td class="bottom_line" id="edit_user_description_td">
+                            {{ post.description }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}
