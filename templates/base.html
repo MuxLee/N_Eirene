@@ -16,7 +16,7 @@
     <script type="text/javascript" src="{% block extrajavascript2 %}{% endblock extrajavascript2 %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base_m.css' %}" media="only screen and (max-width: 750px)"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base_m_500.css' %}" media="only screen and (max-width: 500px)"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base_m_500.css' %}?ver=3" media="only screen and (max-width: 500px)"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock extrastyle %}"/>
     <link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock extrastyle2 %}"/>
     <link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet">
@@ -98,24 +98,27 @@
                         <!-- mobile version menu -->
                         <ul id="m_list_menu">
                             <li class="list_name">
-                                <input type="button" value="게시판"/>
-                                <ul>
-                                    <li>
+                                <input type="button" value="로그아웃" class="list_value"/>
+                            </li>
+                            <li class="list_name">
+                                <input type="button" value="게시판" class="list_value"/>
+                                <ul class="m_board_list_ul">
+                                    <li class="m_board_list_li">
                                         <a href="#">
                                             J-US
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="m_board_list_li">
                                         <a href="#">
                                              Makers
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="m_board_list_li">
                                         <a href="#">
                                             Anointing
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="m_board_list_li">
                                         <a href="#">
                                             All
                                         </a>
@@ -123,9 +126,9 @@
                                 </ul>
                             </li>
                             <li class="list_name">
-                                <input type="button" value="특별"/>
-                                <ul>
-                                    <li>
+                                <input type="button" value="특별" class="list_value"/>
+                                <ul class="m_board_list_ul">
+                                    <li class="m_board_list_li">
                                         <a href="#">
                                             그 외
                                         </a>

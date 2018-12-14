@@ -47,12 +47,14 @@ header {
 }
 #drop_down {
     top: 0;
+    width: 50%;
     background-color: #FFFFFF;
     display: none;
     height: auto;
     position: absolute;
 }
 #drop_down_menu {
+    width: 100%;
     height: auto;
 }
 #drop_down_ul {
@@ -60,11 +62,36 @@ header {
 }
 #m_list_menu {
     width: 100%;
-    height: 100%;
+    height: auto;
     list-style: none;
 }
 .list_name {
-    font-size: 25px;
+    width: 100%;
+    padding-top: 8px;
+    height: auto;
+}
+.list_value {
+    width: 100%;
+    height: auto;
+    border: none;
+    font-size: 20px;
+    background-color: inherit;
+}
+.m_board_list_ul {
+    width: auto;
+    height: auto;
+    display: none;
+    list-style: none;
+    overflow: hidden;
+}
+.m_board_list_li {
+    width: 100%;
+    height:35px;
+    transition: all 0.3s;
+}
+.m_board_list_li > a {
+    font-size: 12px;
+    text-decoration: none;
 }
 #another_header {
     margin-bottom: 80px;

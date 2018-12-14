@@ -178,7 +178,6 @@ header {
     height: auto;
     text-align: center;
     box-shadow: 0px 0px 2px 2px gainsboro;
-    border-radius: 0px 0px 10px 10px;
     margin-bottom: 150px;
 }
 #login_name {

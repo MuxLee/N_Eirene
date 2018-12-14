@@ -80,7 +80,14 @@ $(document).ready(function () {
     $('#m_open_close_menu').click(function () {
         $('#drop_down').fadeIn(600);
     });
-
+    $('.list_value').eq(1).click(function () {
+        $('.m_board_list_ul').eq(0).fadeIn(600);
+        $('.m_board_list_ul').eq(1).css('display', 'none');
+    });
+    $('.list_value').eq(2).click(function () {
+        $('.m_board_list_ul').eq(1).fadeIn(600);
+        $('.m_board_list_ul').eq(0).css('display', 'none');
+    });
 
     $(window).resize(function () {
           var getWindowW = $(window).width();

@@ -8,7 +8,7 @@ $(document).ready(function () {
     var same_text_height = $('.image_hover_text').height();
     var makers_text_width = $('#makers_text').width();
     var anointing_text_width = $('#anointing_text').width();
-    var getIphonePlusWidth = $('html').width();
+    var getIphonePlusWidth = $(window).width();
 
     // image_hover_text image mobile 위치 구현
     if (getIphonePlusWidth <= 430) {
