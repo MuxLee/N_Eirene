@@ -72,7 +72,8 @@ header {
     width: 100%;
     height: 70px;
     border: none;
-    font-size: 18px;
+    font-size: 22px;
+    font-family: 'Jua', sans-serif;
     background-color: inherit;
 }
 .m_board_list_ul {
@@ -84,14 +85,17 @@ header {
 }
 .m_board_list_li {
     width: 100%;
-    height:35px;
+    height: 50px;
     border-top: 1px dashed gainsboro;
     border-bottom: 1px dashed gainsboro;
     text-align: center;
 }
 .m_board_list_li > a {
-    font-size: 15px;
-    line-height: 35px;
+    width: 100%;
+    font-size: 17px;
+    font-family: 'Jua', sans-serif;
+    line-height: 50px;
+    color: #000;
     text-decoration: none;
 }
 #another_header {

@@ -97,20 +97,33 @@ $(document).ready(function () {
 
     $('.list_value').eq(1).click(function () {
         if (post == 1) {
-            $('.m_board_list_ul').eq(0).fadeIn(100);
+            $('.list_value').eq(1).css('color', 'red');
+            $('.m_board_list_ul').eq(0).fadeIn(400);
             post++;
         } else if (post == 2) {
-              $('.m_board_list_ul').eq(0).fadeOut(100);
+              $('.list_value').eq(1).css('color', '#000');
+              $('.m_board_list_ul').eq(0).fadeOut(200);
               post--;
+        }
+        if (ano == 2) {
+            $('.list_value').eq(2).css('color', '#000');
+            $('.m_board_list_ul').eq(1).css('display', 'none');
+            ano--;
         }
     });
     $('.list_value').eq(2).click(function () {
         if (ano == 1) {
-            $('.m_board_list_ul').eq(1).fadeIn(100);
+            $('.list_value').eq(2).css('color', 'red');
+            $('.m_board_list_ul').eq(1).fadeIn(400);
             ano++;
         } else if (ano == 2) {
-              $('.m_board_list_ul').eq(1).fadeOut(100);
-              ano--;
+              $('.list_value').eq(2).css('color', '#000');
+              $('.m_board_list_ul').eq(1).fadeOut(200);
+        }
+        if (post == 2) {
+            $('.list_value').eq(1).css('color', '#000');
+            $('.m_board_list_ul').eq(0).css('display', 'none');
+            post--;
         }
     });
 
