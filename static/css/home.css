@@ -158,4 +158,12 @@
         z-index: 3;
         left: 0px;
     }
+    #free_board_div {
+        text-align: center;
+    }
+    #board_name {
+        margin: 0;
+        float: none;
+        font-size: 40px;
+    }
 }
