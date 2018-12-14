@@ -166,4 +166,16 @@
         float: none;
         font-size: 40px;
     }
+    #m_none_content, #m_none_data, #m_none_description, #edit_user_content_td, #edit_user_data_td, #edit_user_description_td {
+        display: none;
+    }
+    #m_none_num, #edit_no_td {
+        width: 18%;
+    }
+    #m_show_editer, #edit_user_name_td {
+        width: 20%;
+    }
+    #m_show_title, #edit_user_title_td {
+        width: 50%;
+    }
 }
