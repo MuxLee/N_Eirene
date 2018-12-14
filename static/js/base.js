@@ -1,3 +1,4 @@
+var check = 1;
 $(document).ready(function () {
     // open_close Event
     var Open_Close_Click = -1;
@@ -77,9 +78,17 @@ $(document).ready(function () {
                 $('.drop_down_name').eq(count).text('Anointing');
         }
     }
+
     $('#m_open_close_menu').click(function () {
-        $('#drop_down').fadeIn(600);
+        if (check == 1) {
+            $('#drop_down').fadeIn(600);
+            check++;
+        } else if (check == 2) {
+              $('#drop_down').fadeOut(600);
+              check--;
+        }
     });
+
     $('.list_value').eq(1).click(function () {
         $('.m_board_list_ul').eq(0).fadeIn(600);
         $('.m_board_list_ul').eq(1).css('display', 'none');
