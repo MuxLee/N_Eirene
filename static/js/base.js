@@ -1,4 +1,6 @@
 var check = 1;
+var post = 1;
+var ano = 1;
 $(document).ready(function () {
     // open_close Event
     var Open_Close_Click = -1;
@@ -77,11 +79,15 @@ $(document).ready(function () {
             else if (count == 2)
                 $('.drop_down_name').eq(count).text('Anointing');
         }
+    } else {
+          $('#m_list_menu').css('display', 'none');
     }
 
     $('#m_open_close_menu').click(function () {
         if (check == 1) {
             $('#drop_down').fadeIn(600);
+            var getDropDownW = $('#drop_down_menu').width();
+            $('#drop_down').css('left', getWindowW - getDropDownW);
             check++;
         } else if (check == 2) {
               $('#drop_down').fadeOut(600);
@@ -90,12 +96,22 @@ $(document).ready(function () {
     });
 
     $('.list_value').eq(1).click(function () {
-        $('.m_board_list_ul').eq(0).fadeIn(600);
-        $('.m_board_list_ul').eq(1).css('display', 'none');
+        if (post == 1) {
+            $('.m_board_list_ul').eq(0).fadeIn(100);
+            post++;
+        } else if (post == 2) {
+              $('.m_board_list_ul').eq(0).fadeOut(100);
+              post--;
+        }
     });
     $('.list_value').eq(2).click(function () {
-        $('.m_board_list_ul').eq(1).fadeIn(600);
-        $('.m_board_list_ul').eq(0).css('display', 'none');
+        if (ano == 1) {
+            $('.m_board_list_ul').eq(1).fadeIn(100);
+            ano++;
+        } else if (ano == 2) {
+              $('.m_board_list_ul').eq(1).fadeOut(100);
+              ano--;
+        }
     });
 
     $(window).resize(function () {

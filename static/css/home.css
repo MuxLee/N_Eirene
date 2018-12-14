@@ -160,6 +160,7 @@
     }
     #free_board_div {
         text-align: center;
+        height: 30%;
     }
     #board_name {
         margin: 0;
