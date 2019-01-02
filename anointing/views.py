@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
 from django.db.models import Q
 from anointing.models import Post
@@ -28,11 +28,10 @@ class PostList(ListView):
         context['page_range'] = page_range
         return context
 
-def PostDetail(request, pk):
-    image = get_object_or_404(Post, pk=pk)
-    video = get_object_or_404(Post, pk=pk)
-    messages = '<img src="{url}"/>'.format(url=image.image.url),
+class PostDetail(DetailView):
+    model = Post
 
-    return HttpResponse('\n'.join(messages))
-    # render(request, 'anointing/post_detail.html', {'video': video})
-    # https://djangogirlsseoul.gitbooks.io/django-tube/content/07-DjangoTube-VideoDetail.html
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostDetail, self).get_context_data(**kwargs)
+        context['post_lists'] = Post.objects.all()
+        return context

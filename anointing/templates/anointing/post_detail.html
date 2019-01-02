@@ -9,9 +9,6 @@
       <h2>
           {{ object.title }}
       </h2>
-      <div>
-          {{ object.messages }}
-      </div>
       <div id="player"></div>
       <p>
           {% if object.get_previous_by_modify_date %}
@@ -31,8 +28,11 @@
       <div>
           {{ object.content|linebreaks }}
       </div>
+      <div>
+          {{ object.image }}
+      </div>
   </body>
-  <script type="text/javascript">
+      <script type="text/javascript">
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
@@ -42,8 +42,8 @@
       var player;
       function onYouTubeIframeAPIReady() {
           player = new YT.Player('player', {
-              videoId: '{{ video.video_key }}'
+              videoId: '{{ object.video_key }}'
           });
       }
-  </script>
+      </script>
 </html>
