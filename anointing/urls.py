@@ -3,6 +3,7 @@ from anointing.views import PostList, PostDetail
 from Eirene.views import Home
 from . import views
 
+
 app_name = 'anointing'
 
 urlpatterns = [

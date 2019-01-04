@@ -3,13 +3,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title> Anointing Post </title>
   </head>
   <body>
       <h2>
           {{ object.title }}
       </h2>
       <div id="player"></div>
+      <script>
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          var player;
+          function onYouTubePlayerAPIReady() {
+              player = new YT.Player('player', {
+                  videoId: '{{ object.video_key }}'
+              });
+          }
+      </script>
       <p>
           {% if object.get_previous_by_modify_date %}
               <a href="{{ object.get_previous_board_get }}" title="View Previous Page">
@@ -29,21 +42,7 @@
           {{ object.content|linebreaks }}
       </div>
       <div>
-          {{ object.image }}
+          <img src="{{ object.image.url }}" alt="{{ object.image }}"/>
       </div>
   </body>
-      <script type="text/javascript">
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      var player;
-      function onYouTubeIframeAPIReady() {
-          player = new YT.Player('player', {
-              videoId: '{{ object.video_key }}'
-          });
-      }
-      </script>
 </html>

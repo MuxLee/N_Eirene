@@ -10,7 +10,7 @@ class Post(models.Model):
     title = models.CharField('TITLE', max_length=50)
     slug = models.SlugField('SLUG', unique=True, allow_unicode=True, help_text='one word for title alias')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    image = models.ImageField(blank=True, upload_to='%Y/%m/%d/filtered')
+    image = models.ImageField(blank=True, upload_to='%Y/%m/%d/photo')
     video_key = models.CharField(max_length=200, blank=True)
     content = models.TextField('CONTENT')
     create_date = models.DateTimeField('Create Date', auto_now_add=True)
