@@ -1,15 +1,108 @@
+{% extends 'home.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title> Anointing Post </title>
-  </head>
-  <body>
+{% block extrastyle2 %}
+    {% static 'css/detail.css' %}
+{% endblock extrastyle2 %}
+{% block content %}
+    <div id="free_board_detail_div">
+        <a href="{% url 'index' %}" id="board_name">
+            자유 게시판
+        </a>
+        <div id="free_board_detail">
+            <ul id="bgc_christmas">
+              <li class="li_christmas red" id="first_li"></li>
+              <li class="li_christmas green"></li>
+              <li class="li_christmas red"></li>
+              <li class="li_christmas green"></li>
+              <li class="li_christmas red"></li>
+              <li class="li_christmas green"></li>
+              <li class="li_christmas red"></li>
+              <li class="li_christmas green"></li>
+              <li class="li_christmas red"></li>
+              <li class="li_christmas green" id="last_li"></li>
+            </ul>
+            <div id="detail_user">
+                {{ user.username }}
+            </div>
+            <div id="detail_title">
+                {{ object.title }}
+            </div>
+            <div id="detail_modify">
+                {{ object.modify_date|date:"Y M d"}}일
+            </div>
+        </div>
+    </div>
+    <div id="free_board_detail_content">
+        <div id="detail_content">
+            <div id="player" disablekb="0"></div>
+        </div>
+        <div id="next_prev_button">
+            <nav class="button">
+                {% if object.get_previous_by_modify_date %}
+                    <a href="{{ object.get_previous_board.get_absolute_url }}" title="View Previous Page" class="button_a">
+                        이전글
+                    </a>
+                {% else %}
+                    <a class="button_a">
+                        마지막
+                    </a>
+                {% endif %}
+            </nav>
+            <nav class="button">
+                {% if object.get_next_by_modify_date %}
+                    <a href="{{ object.get_next_board.get_absolute_url }}" title="View Next Page" class="button_a">
+                        다음글
+                    </a>
+                {% else %}
+                    <a class="button_a">
+                        처음
+                    </a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+    <div id="comment">
+    </div>
+    <div id="mini_board">
+        <div id="mini_list">
+            <table id="mini_table" border="1">
+                <tr>
+                    <th id="mini_no">
+                        글 번호
+                    </th>
+                    <th id="mini_editor">
+                        작성자
+                    </th>
+                    <th id="mini_title">
+                        제목
+                    </th>
+                    <th id="mini_content">
+                        내용
+                    </th>
+                </tr>
+                {% for list in m_lists %}
+                    <tr>
+                        <td>
+                            {{ list.id }}
+                        </td>
+                        <td>
+                            {{ user.username }}
+                        </td>
+                        <td>
+                            {{ list.title|truncatechars:20 }}
+                        </td>
+                        <td>
+                            {{ list.content|truncatechars:20 }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
       <h2>
           {{ object.title }}
       </h2>
-      <div id="player" disablekb="0"></div>
       <script>
           var tag = document.createElement('script');
           tag.src = "https://www.youtube.com/iframe_api";
@@ -44,5 +137,4 @@
       <div>
           <img src="{{ object.image.url }}" alt="{{ object.image }}"/>
       </div>
-  </body>
-</html>
+{% endblock content %}
