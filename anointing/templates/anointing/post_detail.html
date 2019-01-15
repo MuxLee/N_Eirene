@@ -5,27 +5,15 @@
 {% endblock extrastyle2 %}
 {% block content %}
     <div id="free_board_detail_div">
-        <a href="{% url 'index' %}" id="board_name">
-            자유 게시판
+        <a href="{% url 'anointing:post_list' %}" id="board_name">
+            Anointing
         </a>
         <div id="free_board_detail">
-            <ul id="bgc_christmas">
-              <li class="li_christmas red" id="first_li"></li>
-              <li class="li_christmas green"></li>
-              <li class="li_christmas red"></li>
-              <li class="li_christmas green"></li>
-              <li class="li_christmas red"></li>
-              <li class="li_christmas green"></li>
-              <li class="li_christmas red"></li>
-              <li class="li_christmas green"></li>
-              <li class="li_christmas red"></li>
-              <li class="li_christmas green" id="last_li"></li>
-            </ul>
-            <div id="detail_user">
-                {{ user.username }}
-            </div>
             <div id="detail_title">
                 {{ object.title }}
+            </div>
+            <div id="detail_user">
+                {{ user.username }}
             </div>
             <div id="detail_modify">
                 {{ object.modify_date|date:"Y M d"}}일
@@ -33,11 +21,12 @@
         </div>
     </div>
     <div id="free_board_detail_content">
-        <div id="detail_content">
-            <div id="player" disablekb="0"></div>
+        <div id="player" disablekb="0"></div>
+        <div id="Sheet_Music">
+            <img src="{{ object.image.url }}" alt="{{ object.image }}"/>
         </div>
         <div id="next_prev_button">
-            <nav class="button">
+            <nav class="button left_btn">
                 {% if object.get_previous_by_modify_date %}
                     <a href="{{ object.get_previous_board.get_absolute_url }}" title="View Previous Page" class="button_a">
                         이전글
@@ -48,7 +37,7 @@
                     </a>
                 {% endif %}
             </nav>
-            <nav class="button">
+            <nav class="button right_btn">
                 {% if object.get_next_by_modify_date %}
                     <a href="{{ object.get_next_board.get_absolute_url }}" title="View Next Page" class="button_a">
                         다음글
@@ -133,8 +122,5 @@
       </p>
       <div>
           {{ object.content|linebreaks }}
-      </div>
-      <div>
-          <img src="{{ object.image.url }}" alt="{{ object.image }}"/>
       </div>
 {% endblock content %}
