@@ -23,8 +23,8 @@ $(document).ready(function () {
 
     }
     // ???_link > text mobile 구현
-    if (getIphonePlusWidth <= 430) {
-        var getPhoneWidth = $('html').width();
+    if (getIphonePlusWidth <= 510) {
+        var getPhoneWidth = $('.link').width();
         var image = $('.link');
         var image_count = 0;
         var max = image.length-1;
